@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title id="title">Shoppy - Die intelligente Einkaufsliste</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="assets/img/icon.png">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <style>
+
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        hr {
+            display: block;
+            width: 70vw;
+            height: 2px;
+            background-color: white;
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            text-align: center;
+
+            font-size: 4rem;
+        }
+
+        body {
+            background-color: #00020a;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%231e1d3b' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23050e24'%3E%3Ccircle cx='769' cy='229' r='7'/%3E%3Ccircle cx='539' cy='269' r='7'/%3E%3Ccircle cx='603' cy='493' r='7'/%3E%3Ccircle cx='731' cy='737' r='7'/%3E%3Ccircle cx='520' cy='660' r='7'/%3E%3Ccircle cx='309' cy='538' r='7'/%3E%3Ccircle cx='295' cy='764' r='7'/%3E%3Ccircle cx='40' cy='599' r='7'/%3E%3Ccircle cx='102' cy='382' r='7'/%3E%3Ccircle cx='127' cy='80' r='7'/%3E%3Ccircle cx='370' cy='105' r='7'/%3E%3Ccircle cx='578' cy='42' r='7'/%3E%3Ccircle cx='237' cy='261' r='7'/%3E%3Ccircle cx='390' cy='382' r='7'/%3E%3C/g%3E%3C/svg%3E");
+            /* https://www.svgbackgrounds.com */
+            margin: 0;
+            color: white;
+
+            width: 100%;
+        }
+
+        main {
+            scroll-behavior: smooth;
+        }
+
+        .show-box {
+            height: 100vh;
+            width: 100vw;
+            max-width: 100%;
+        }
+
+        #animated-typing {
+            text-align: left;
+            font-size: 5vw;
+        }
+
+        .typed-cursor {
+            font-size: 5vw;
+        }
+
+        @media screen and (min-width: 600px) {
+            #animated-typing {
+                font-size: 2rem;   
+            }
+
+            .typed-cursor {
+                font-size: 2rem;
+            }
+        }
+
+        .show-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project {
+            width: 100vw;
+            max-width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .description p {
+            max-width: 30rem;
+            text-align: center;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .description {
+            font-size: 1rem;
+        }
+
+        .team {
+            width: 100vw;
+            min-height: 100vh;
+            max-width: 100%;
+
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .team--showoff {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .person {
+            margin: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            text-align: center
+        }
+
+        .person--portrait {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .person h3 {
+            margin: 1.5rem 0.4rem 0.4rem;
+        }
+
+        .person--description p {
+            margin: 0.1rem;
+            color: lightgrey;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+
+            width: 100vw;
+            max-width: 100%;
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+            box-shadow: 0 .5px 8px 0 rgba(0,0,0,0.67);
+        }
+
+        footer > a {
+            color: white;
+        }
+
+        .documents {
+            height: 100vh;
+            width: 100vw;
+            max-width: 100%;
+
+            font-size: 1.2rem;
+        }
+
+        .documents ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            padding: 0;
+            margin-top: 4rem;
+        }
+
+        .documents li {
+            list-style-type: none;
+            margin: .5rem;
+            font-size: 1.6rem;
+        }
+
+        .documents a {
+            color: white;
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            AOS.init();
+
+            const title = document.getElementById("title");
+            const slogan = document.getElementById("animated-typing");
+
+            window.addEventListener("blur", () => title.innerText = ":( Shoppy vermisst dich" );
+            window.addEventListener("focus", () => title.innerText = "Shoppy - Die intelligente Einkaufsliste");
+
+            let typed = new Typed("#animated-typing", {
+                stringsElement: "#typed-strings",
+                typeSpeed: 30,
+                backSpeed: 20,
+                backDelay: 800,
+                onComplete: () => {
+                    document.getElementsByClassName("typed-cursor--blink")[0].remove();
+                    slogan.style.display = "block";
+                    slogan.classList.add("animated", "bounce");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <div data-aos-duration="700" data-aos="fade-up" class="show-box">
+            <img style="width: 20rem;" src="assets/img/logo.png" alt="Project logo">
+            <div class="type-box">
+                <div id="typed-strings">
+                        <p>Shoppy - Die <strong>schlaue</strong> Einkaufsliste.</p>
+                        <p>Shoppy - Die <strong>geniale</strong> Einkaufsliste.</p>
+                        <p>Shoppy - Die <strong>intelligente</strong> Einkaufsliste.</p>
+                </div>
+                <span id="animated-typing"></span>
+            </div>
+        </div>
+        <hr data-aos="fade-up">
+        <div data-aos="fade-up" class="project">
+            <h1>Shoppy</h1>
+            <div class="description">
+                <p>
+                    Das Ziel unserer Diplomarbeit ist es, das Kaufverhalten einer individuellen Person oder Gruppe zu analysieren und  per Smartphone App  grafisch darzustellen. Außerdem wollen wir den herkömmlichen Einkaufszettel aus Papier durch unsere App ersetzen.
+                </p>
+                <p>
+                    Die Benutzer scannen  ihre Rechnungen oder Produkte per Smartphone ein. Im Nachhinein werden essentielle Informationen wie die Verteilung der Ausgaben in verschiedenen Kategorien (z.B. Kleidung, Lebensmittel, Freizeit) angezeigt. Aus den gesammelten Daten wird, nachdem genügend zur Verfügung stehen, eine Einkaufsliste erstellt. Der Benutzer kann diese verwalten und auch seine eigenen Produkte hinzufügen. Außerdem können Benutzer Gruppen erstellen in denen sie gemeinsame Einkaufslisten erstellen und verwalten können.
+                </p>
+            </div>
+            <img style="width: 15rem;" src="assets/img/tf.png" alt="tensorflow logo">
+        </div>
+        <hr data-aos="fade-up">
+        <div data-aos="fade-up" class="team">
+            <h1>Das Team</h1>
+            <div class="description">
+                    <p>
+                            Die Idee, welche jetzt zum Diplomarbeitsprojekt wurde, entstand im Schuljahr 18/19 in der 4BI und entsprang dem Wunsch des Product Owner nach einer App, die alle Einkäufe eines Benutzers analysiert, grafisch darstellt und aus diesen Daten, mittels künstlicher Intelligenz, automatisch eine, an den Benutzer angepasste, Einkaufsliste erstellt.
+                    </p>
+            </div>
+            <div class="team--showoff">
+                <div class="person">
+                    <img class="person--portrait" src="assets/img/person.jpg" alt="person">
+                    <div class="person--description">
+                        <h3>Doja Rafael</h3>
+                        <p>Scrum Master & Designer</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img class="person--portrait" src="assets/img/person.jpg" alt="person">
+                    <div class="person--description">
+                        <h3>Coja Filip</h3>
+                        <p>Developer & AI</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img class="person--portrait" src="assets/img/person.jpg" alt="person">
+                    <div class="person--description">
+                        <h3>Kisling Daniel</h3>
+                        <p>Developer</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img class="person--portrait" src="assets/img/person.jpg" alt="person">
+                    <div class="person--description">
+                        <h3>Seczer Tobias</h3>
+                        <p>Developer & AI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr data-aos="fade-up">
+        <div data-aos="fade-up" class="documents">
+            <h1>Dokumente</h1>
+            <ul>
+                <li><a href="assets/docs/da_ansuchen_doja.pdf">Ansuchen</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>Shoppy Projektwebseite 2019</p>
+        <a href="impressum.html">Impressum</a>
+    </footer>
+</body>
+</html>
