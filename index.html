@@ -14,6 +14,7 @@
 
         * {
             font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
         }
 
         hr {
@@ -176,8 +177,10 @@
         .documents ul {
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
+            height: 70%;
+            width: 100%;
 
             padding: 0;
             margin-top: 4rem;
@@ -187,12 +190,43 @@
             list-style-type: none;
             margin: .5rem;
             font-size: 1.6rem;
+
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .documents li:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .documents li > a > * {
+            margin: 0.4rem;
         }
 
         .documents a {
             color: white;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            text-decoration: none;
         }
 
+        .bills{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .bill {
+            width: 18rem;
+            margin: 1rem;
+
+            border: 4px solid white;
+            border-radius: 5px;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -242,7 +276,11 @@
                     Die Benutzer scannen  ihre Rechnungen oder Produkte per Smartphone ein. Im Nachhinein werden essentielle Informationen wie die Verteilung der Ausgaben in verschiedenen Kategorien (z.B. Kleidung, Lebensmittel, Freizeit) angezeigt. Aus den gesammelten Daten wird, nachdem genügend zur Verfügung stehen, eine Einkaufsliste erstellt. Der Benutzer kann diese verwalten und auch seine eigenen Produkte hinzufügen. Außerdem können Benutzer Gruppen erstellen in denen sie gemeinsame Einkaufslisten erstellen und verwalten können.
                 </p>
             </div>
-            <img style="width: 15rem;" src="assets/img/tf.png" alt="tensorflow logo">
+            <div class="bills">
+                <img class="bill" src="assets/img/bills/bill1.png" alt="tensorflow logo">
+                <img class="bill" src="assets/img/bills/bill2.png" alt="tensorflow logo">
+                <img class="bill" src="assets/img/bills/bill3.png" alt="tensorflow logo">
+            </div>
         </div>
         <hr data-aos="fade-up">
         <div data-aos="fade-up" class="team">
@@ -287,7 +325,12 @@
         <div data-aos="fade-up" class="documents">
             <h1>Dokumente</h1>
             <ul>
-                <li><a href="assets/docs/da_ansuchen_doja.pdf">Ansuchen</a></li>
+                <li>
+                    <a href="assets/docs/da_ansuchen_doja.pdf">
+                        <img style="width: 2rem; height: 2rem;" src="assets/img/pdf.png" alt="PDF logo">
+                        <p>Ansuchen</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </main>
