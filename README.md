@@ -1,2 +1,2 @@
 # website
-Project website for shoppy.
+Project website for listassist.
