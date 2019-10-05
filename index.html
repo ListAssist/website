@@ -252,12 +252,33 @@
 
         .nav .links a {
             color: white;
-            margin: 0.4rem;
+            margin: 0.7rem;
+            text-decoration: none;
+            border: none;
+
+            transition: border 2s;
+
+        }
+
+        .nav .links a::after {
+            content: '';
+            display: block;
+            margin: auto;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width .3s;
+        }
+
+        .nav .links a:hover::after {
+            width: 100%;
         }
         
         .progressBar {
             width: 80%;
-            border: 1px solid white;
+            border: 2px solid white;
+            border-radius: 5px;
+            z-index: 20;
         }
 
         .bar {
