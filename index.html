@@ -230,6 +230,116 @@
             border: 4px solid white;
             border-radius: 5px;
         }
+
+        .nav {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            z-index: 30;
+            background-color: #050e24;
+            padding: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .nav .links {
+            display: flex;
+            flex-direction: row;            
+            justify-content: flex-end;
+        }
+
+        .nav .links a {
+            color: white;
+            margin: 0.4rem;
+        }
+        
+        .progressBar {
+            width: 80%;
+            border: 1px solid white;
+        }
+
+        .bar {
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: right;
+            padding-right: 10px;
+            line-height: 30px;
+            color: white; 
+        }
+
+        .bars {
+            display: flex;
+            max-width: 50rem;
+            flex-direction: column;
+            margin: auto;
+            justify-content: space-evenly;
+        }
+
+        .barItem {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .barItem h3 {
+            width: 15%;
+        }
+        
+        @media screen and (max-width: 380px) {
+            .nav {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                top: 0;
+                z-index: 30;
+                background-color: #050e24;
+                padding: 0.5rem;
+                font-size: 1rem;
+            }
+
+            .description p {
+                max-width: 20rem;
+                text-align: justify;
+                margin: auto;
+                padding: 1rem;
+            }
+
+            .description {
+                font-size: 1rem;
+                line-height: 1.4rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .progressBar {
+                width: 70%;
+                border: 1px solid white;
+            }
+
+            .barItem {
+                flex-direction: column;
+            }
+
+            .barItem h3 {
+                width: unset;
+            }
+
+            .documents li {
+                font-size: 1.3rem;
+            }
+
+            .documents li > a > * {
+                margin: 0.1rem;
+            }
+        }
+
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -257,6 +367,17 @@
 </head>
 <body>
     <main>
+        <nav class="nav">
+            <div>
+                ListAssist - Die intelligente Einkaufsliste
+            </div>
+            <div class="links">
+                <a href="#project">Projekt</a>
+                <a href="#team">Team</a>
+                <a href="#progress">Fortschritt</a>
+                <a href="#documents">Dokumente</a>
+            </div>
+        </nav>
         <div data-aos-duration="700" data-aos="fade-up" class="show-box">
             <img style="width: 20rem;" src="assets/img/logo.png" alt="Projekt logo">
             <div class="type-box">
@@ -269,7 +390,7 @@
             </div>
         </div>
         <hr data-aos="fade-up">
-        <div data-aos="fade-up" class="project">
+        <div data-aos="fade-up" class="project" id="project">
             <h1>ListAssist</h1>
             <div class="description">
                 <p>
@@ -286,12 +407,12 @@
             </div>
         </div>
         <hr data-aos="fade-up">
-        <div data-aos="fade-up" class="team">
+        <div data-aos="fade-up" class="team" id="team">
             <h1>Das Team</h1>
             <div class="description">
-                    <p>
-                            Die Idee, welche jetzt zum Diplomarbeitsprojekt wurde, entstand im Schuljahr 18/19 in der 4BI und entsprang dem Wunsch des Product Owner nach einer App, die alle Einkäufe eines Benutzers analysiert, grafisch darstellt und aus diesen Daten, mittels künstlicher Intelligenz, automatisch eine, an den Benutzer angepasste, Einkaufsliste erstellt.
-                    </p>
+                <p>
+                    Die Idee, welche jetzt zum Diplomarbeitsprojekt wurde, entstand im Schuljahr 18/19 in der 4BI und entsprang dem Wunsch des Product Owner nach einer App, die alle Einkäufe eines Benutzers analysiert, grafisch darstellt und aus diesen Daten, mittels künstlicher Intelligenz, automatisch eine, an den Benutzer angepasste, Einkaufsliste erstellt.
+                </p>
             </div>
             <div class="team--showoff">
                 <div class="person">
@@ -325,7 +446,25 @@
             </div>
         </div>
         <hr data-aos="fade-up">
-        <div data-aos="fade-up" class="documents">
+        <div data-aos="fade-up" class="progress" id="progress">
+            <h1>Fortschritt</h1>
+            <div class="bars">
+                <div class="barItem">
+                    <div class="progressBar">
+                        <div class="bar" style="width: 90%;">90%</div>
+                    </div>
+                    <h3>Planung</h3>
+                </div>
+                <div class="barItem">
+                    <div class="progressBar">
+                        <div class="bar" style="width: 7%;">7%</div>
+                    </div>
+                    <h3>Umsetzung</h3>
+                </div>
+            </div>
+        </div>
+        <hr data-aos="fade-up">
+        <div data-aos="fade-up" class="documents" id="documents">
             <h1>Dokumente</h1>
             <ul>
                 <li>
